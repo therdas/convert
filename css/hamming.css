@@ -1,0 +1,210 @@
+body {
+	font-family: 'Roboto Mono', monospace;
+	width: 40%;
+	margin: 0 auto;
+	box-sizing: border-box;
+	margin-top: 5em;
+}
+
+a {
+	text-decoration: none;
+	color: rgba(0,0,0,0.8);
+}
+
+h1 {
+	text-align: center;
+	width: 100%;
+	font-weight: 400;
+	margin-bottom: 2em;
+} 
+
+nav {
+	margin-top: 3em;
+}
+
+nav > a {
+	box-sizing: border-box;
+	display: block;
+	line-height: 1.5em;
+	margin-top: 0.5em;
+	padding: 5px;
+	border-radius: 3px;
+}
+
+nav > a:hover {
+	background-color: rgba(0,0,0,0.05);
+}
+
+nav > a > span:first-child {
+	font-weight: 700;
+	font-size: 1em;
+}
+
+nav > a > span:first-child:after{
+	content: ': ';
+}
+
+nav > a:nth-child(1) > span:first-child {
+	color: #673AB7;
+}
+
+nav > a:nth-child(2) > span:first-child {
+	color: #03A9F4;
+}
+
+nav > a:nth-child(3) > span:first-child {
+	color: #4CAF50;
+}
+
+nav > a:nth-child(4) > span:first-child {
+	color: #607D8B;
+}
+
+
+
+
+
+form {
+	display: block;
+	margin: 5px;
+}
+
+.container {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin: 0.5em 0;
+}
+
+.container > input, .container > div {
+	display: inline-block;
+	margin: 0;
+	padding: 0.5em;
+	font-size: 1em;
+	font-family: 'Roboto Mono', monospace;
+	border: none;
+	border-bottom: 2px solid rgba(0,0,0,0.2);
+	box-sizing: border-box;
+	outline: none;
+	width: 65%;
+	transition: all 0.1s ease-in-out;
+}
+
+.container > input:focus, .container > input:hover, .container > select:hover , .container > div:hover {
+	border-bottom: 2px solid #4CAF50;
+}
+
+.container > span {
+	display: inline-block;
+	margin: 0;
+	padding: 0.5em;
+	margin-bottom: 2px;
+	font-size: 1em;
+	font-family: 'Roboto Mono', monospace;
+	width: 30%;
+	box-sizing: border-box;
+	text-align: right;
+}
+
+.container > select {
+	display: inline-block;
+	margin: 0;
+	padding: 0.5em;
+	font-size: 1em;
+	font-family: 'Roboto Mono', monospace;
+	border: none;
+	border-bottom: 2px solid rgba(0,0,0,0.2);
+	box-sizing: border-box;
+	outline: none;
+	width: 65%;
+	transition: all 0.1s ease-in-out;
+}
+
+.error {
+	width: 100%;
+	padding-left: 33%;
+	box-sizing: border-box;
+	display: block;
+	transition: all 0.2s ease-in-out;
+	color: #B71C1C;
+}
+
+button {
+	background-color: white;
+	border-radius: 3px;
+	border: 2px solid #4CAF50;
+	box-sizing: border-box;
+	color: #4CAF50;
+	display: block;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 1em;
+	font-weight: 700;
+	height: 45px;
+	margin: 2em auto 0 auto;
+	outline: none;
+	padding: 0;
+	text-transform: uppercase;
+	width: 40%;
+	transition: all 0.1s ease-in-out;
+}
+
+button:hover, button:active {
+	border: 2px solid #4CAF50;
+	background-color: #4CAF50;
+	color: white;
+}
+
+#attribute {
+	transform: rotate(270deg);
+	position: absolute;
+	top: 200px;
+	left: -130px;
+	font-weight: 600;
+	opacity: 0.2;
+}
+
+#mobile-attr {
+	padding: 5px;
+	margin-top: 2em;
+	display: none;
+}
+
+/*optimization for mobiles and tablets*/
+
+
+@media all and (max-width: 1000px) {
+  body {
+  	width: 80%;
+  }
+
+  .container > span {
+  	width: 100%;
+  	display: block;
+  	margin-top: 1em;
+  	margin-bottom: -10px;
+  	text-align: left;
+  	font-weight: 700;
+  	font-size: 0.9em;
+  	text-transform: uppercase;
+  }
+
+  select {
+  	padding-left: 0;
+  }
+
+  .container > input, .container > select, .container > div {
+  	width: 100%;
+  	display: block;
+  	margin: 0;
+  }
+
+  #attribute {
+  	display: none;
+  }
+
+  #mobile-attr {
+  	display: block;
+  	font-weight: 600;
+	opacity: 0.2;
+  }
+}

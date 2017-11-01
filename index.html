@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Base Converter :: rd</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="A simple tool to convert numbers from one base to another" />
+	<link rel="stylesheet" href="css/base.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700" rel="stylesheet">
+</head>
+<body>
+
+	<h1>Base Converter</h1>
+
+	<form>
+		<div class="container">
+			<span>Number</span>
+			<input id="originalNumber" type="text" name="originalNumber" placeholder="Number" autocomplete="off" required/>
+		</div>
+		<div class="error" id="e1"></div>
+		
+		<div class="container">
+			<span>In base</span>
+			<input id="originalBase" type="text" name="originalBase" placeholder="Base within 2 and 64" autocomplete="off" required/>
+		</div>
+		<div class="error" id="e2"></div>
+
+		<div class="container">
+			<span>Convert to</span>
+			<input id="toBase" type="text" name="toBase" placeholder="Base within 2 and 64" autocomplete="off" required/>
+		</div>
+		<div class="error" id="e3"></div>
+
+		<div class="container">
+			<span>Result</span>
+			<div id="result" class="input_init">Press Convert!</div>
+		</div>
+		<button type="submit" id="mainButton" type="button" onclick="return false;" class="action"> Convert </button>
+	</form>
+
+	<nav>
+		<a href="https://therdas.github.io/convert/">
+			<span> Base Conversion</span>
+			<span>Converting from any base to any other base (base 2 to base 64)</span>
+		</a>
+		<a href="https://therdas.github.io/convert/codes.html">
+			<span>BCD Codes</span>
+			<span>Decimal to BCD, including 8421, 5421, 4221, 2421, 84-2-1 and Biquinary</span>
+		</a>
+		<a href="https://therdas.github.io/convert/hamming.html">
+			<span>Hamming Code + Checker</span>
+			<span>Hamming Code converter and checker</span>
+		</a>
+		<a href="https://therdas.github.io/convert/gray.html">
+			<span>Gray Code</span>
+			<span>From binary to Gray and back</span>
+		</a>
+	</nav>
+
+	<div id="attribute">Made with &lt;3 by <a href="therdas.github.io">therdas</a>. <a href="sourcecode">Source code</a></div>
+	<script src="js/base.js"></script>
+	<script> </script>
+</body>
+</html>
