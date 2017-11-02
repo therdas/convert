@@ -19,7 +19,7 @@ mainButton.addEventListener("click", convert);
 
 function show (str) {
 	result.innerHTML = str;
-	window.alert(str);
+	
 }
 
 function clearErrors() {
