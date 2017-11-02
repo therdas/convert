@@ -24,7 +24,7 @@ function show (str) {
 
 function clearErrors() {
 		error[0].innerHTML = "";
-		result = "Press convert!";
+	
 }
 
 function showError (str, id) {
