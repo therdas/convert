@@ -39,6 +39,7 @@ function showError (str, id) {
 		default: console.log('Warning: Invalid error message issued.');
 					  break;
 	}
+	result.innerHTML = "Check your input for errors";
 }
 
 function convert () {
