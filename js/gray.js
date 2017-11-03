@@ -15,7 +15,6 @@ function show (str) {
 
 function clearErrors() {
 		error[0].innerHTML = "";
-		result = "Press convert!";
 }
 
 function showError (str, id) {
@@ -30,6 +29,7 @@ function showError (str, id) {
 		default: console.log('Warning: Invalid error message issued.');
 					  break;
 	}
+	result.innerHTML = "Press convert!";
 }
 
 function convert () {
@@ -72,7 +72,7 @@ function check (str, base) {
 		/*If not str[rt] is less than base or is a decimal
 		  point then show a error.
 		*/
-		if( (parseChar(str[rt])>base)   || (parseChar(str[rt])== -1) ) {	
+		if( (parseChar(str[rt])>=base)   || (parseChar(str[rt])== -1) ) {	
 			if(str[rt]=='.');
 			else {
 				showError("Check your number. Please.\nDigit too big for base at position " + (rt+1) +" of number", "input");

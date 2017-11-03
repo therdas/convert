@@ -23,7 +23,6 @@ function show (str) {
 
 function clearErrors() {
 		error[0].innerHTML = "";
-		result = "Press convert!";
 }
 
 function showError (str, id) {
@@ -38,13 +37,14 @@ function showError (str, id) {
 		default: console.log('Warning: Invalid error message issued.');
 					  break;
 	}
+	result.innerHTML = "Press convert!";
 }
 
 function convert () {
 	var num = originalNumber.value;
 	var mode = modeCont.value;
 	var redn = Number(rednCont.value);
-
+	console.log(num);
 	clearErrors();
 
 	if(!check(num, 2)){
@@ -66,7 +66,7 @@ function parseChar (num) {
 }
 
 function check (str, base) {
-
+	console.log("check "+str);
 	var flag = 0;
 
 	if(str.length==0){
@@ -85,7 +85,7 @@ function check (str, base) {
 		/*If not str[rt] is less than base or is a decimal
 		  point then show a error.
 		*/
-		if( (parseChar(str[rt])>base)   || (parseChar(str[rt])== -1) ) {	
+		if( (parseChar(str[rt])>=base)   || (parseChar(str[rt])== -1) ) {	
 			if(str[rt]=='.');
 			else {
 				showError("Check your number. Please.\nDigit too big for base at position " + (rt+1) +" of number", "input");
@@ -145,7 +145,7 @@ function toHamming (num, redundant = 3) {
 		var h3 = xor(num[1], num[2], num[3], num[7], num[8], num[9], num[10]);
 		var h4 = xor(num[4], num[5], num[6], num[7], num[8], num[9], num[10]);
 		return ""+h1+h2+num[0]+h3+num[1]+num[2]+num[3]+h4+num[4]+num[5]+num[6]+num[7]+num[8]+num[9]+num[10];
-	} else if (redundant == 1) {
+	} else if (redundant == 2) {
 		return ""+num+num+num;
 	}
 }
@@ -170,6 +170,11 @@ function checkHamming (ham, redundant) {
 		var c2 = xor(ham[1], ham[2], ham[5], ham[6], ham[9], ham[10], ham[13], ham[14]);
 		var c3 = xor(ham[3], ham[4], ham[5], ham[6], ham[11], ham[12], ham[13], ham[14]);
 		var c4 = xor(ham[7], ham[8], ham[9], ham[10], ham[11], ham[12], ham[13], ham[14]);
+	} else if (redundant == 2) {
+		var c1 = xor(ham[0], ham[2]);
+		var c2 = xor(ham[1], ham[2]);
+		var c3 = 0;
+		var c4 = 0;
 	}
 	var binErrorAt = ""+c4+c3+c2+c1;
 	var errorAt = Number(c4)*8+Number(c3)*4+Number(c2)*2+Number(c1)*1;

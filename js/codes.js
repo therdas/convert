@@ -19,12 +19,10 @@ mainButton.addEventListener("click", convert);
 
 function show (str) {
 	result.innerHTML = str;
-	
 }
 
 function clearErrors() {
 		error[0].innerHTML = "";
-	
 }
 
 function showError (str, id) {
@@ -39,7 +37,7 @@ function showError (str, id) {
 		default: console.log('Warning: Invalid error message issued.');
 					  break;
 	}
-	result.innerHTML = "Check your input for errors";
+	result.innerHTML = "Press convert!";
 }
 
 function convert () {
@@ -133,63 +131,4 @@ function toBCD (num, code) {
 		else
 			converted = converted + code[parseChar(num[rt])];
 	return converted;
-}
-
-function toGrey (num) {
-	var converted = "";
-	converted += num[0];
-	for(var i=1; i<num.length; ++i)
-		converted += num[i-1]!=num[i]?'1':'0';			//Implements XOR, TRUE(1) iff x!= y else FALSE(0)
-	return converted;
-}
-
-function fromGreytoBin (num) {
-	var converted = "";
-	converted += num[0];
-	for(var i=1; i<num.length; ++i)
-		converted += converted[i-1]!=num[i]?'1':'0';			//Implements XOR, TRUE(1) iff x!= y else FALSE(0)
-	return converted;
-}
-
-function toHamming (num) {
-	if(num.length!=4){
-		showError("Number of data bits required for (7,4) Hamming code is 4. Check input data");
-		return;
-	}
-	var h1 = ( (Number(num[0]) + Number(num[1]) + Number(num[3])) % 2 ) == 1 ? '1':'0';
-	var h2 = ( (Number(num[0]) + Number(num[2]) + Number(num[3])) % 2 ) == 1 ? '1':'0';
-	var h3 = ( (Number(num[1]) + Number(num[2]) + Number(num[3])) % 2 ) == 1 ? '1':'0';
-	return ""+h1+h2+num[0]+h3+num[1]+num[2]+num[3];
-}
-
-function checkHamming (ham) {
-	var corrected = "";
-
-	if(ham.length!=7){
-		console.log("Number of data bits required for (7,4) Hamming code is 4. Check input data");
-		return;
-	}
-
-	var c1 = ( (Number(ham[0]) + Number(ham[2]) + Number(ham[4]) + Number(ham[6])) % 2 ) == 1 ? '1':'0';
-	var c2 = ( (Number(ham[1]) + Number(ham[2]) + Number(ham[5]) + Number(ham[6])) % 2 ) == 1 ? '1':'0';
-	var c3 = ( (Number(ham[3]) + Number(ham[4]) + Number(ham[5]) + Number(ham[6])) % 2 ) == 1 ? '1':'0';
-
-	var binErrorAt = ""+c3+c2+c1;
-	var errorAt = Number(c3)*4+Number(c2)*2+Number(c1)*1;
-
-	if(errorAt == 0)
-		console.log("AOK!")
-	else {
-
-		console.log("Error at bit "+errorAt+" code "+binErrorAt );
-
-		for(var i=0; i<ham.length; ++i) {
-			if(i == (errorAt-1) )
-				corrected += (ham[i]=='1')?'0':'1';
-			else
-				corrected += ham[i];
-		}
-
-		console.log(" Corrected: " + corrected);
-	}
 }

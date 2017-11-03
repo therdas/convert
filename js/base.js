@@ -76,7 +76,6 @@ function show (str) {
 function clearErrors() {
 	for(var i = 0; i<3; ++i)
 		error[i].innerHTML = "";
-	result = "Press convert!";
 }
 
 function showError (str, id) {
@@ -95,6 +94,7 @@ function showError (str, id) {
 		default: console.log('Warning: Invalid error message issued.');
 					  break;
 	}
+	result.innerHTML = "Press convert!";
 }
 
 function parseNumber (num) {
@@ -134,7 +134,7 @@ function check (str, cbase, base) {
 		/*If not str[rt] is less than base or is a decimal
 		  point then show a error.
 		*/
-		if( (parseChar(str[rt])>base)   || (parseChar(str[rt])== -1) ) {	
+		if( (parseChar(str[rt])>=base)   || (parseChar(str[rt])== -1) ) {	
 			if(str[rt]=='.');
 			else {
 				showError("Check your number. Please.\nDigit too big for base at position " + (rt+1) +" of number", "input");
