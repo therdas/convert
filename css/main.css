@@ -82,8 +82,8 @@ form {
 }
 
 .container > input, .container > div {
-	border-bottom: 2px solid rgba(0,0,0,0.2);
 	border: none;
+	border-bottom: 2px solid rgba(0,0,0,0.2);
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
 	display: block;
@@ -119,8 +119,8 @@ form {
 
 .container > select {
 	background-color: white;
-	border-bottom: 2px solid rgba(0,0,0,0.2);
 	border: none;
+	border-bottom: 2px solid rgba(0,0,0,0.2);
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
 	display: block;
