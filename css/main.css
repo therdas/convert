@@ -2,8 +2,8 @@ body {
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
 	font-family: 'Roboto Mono', monospace;
-	margin-top: 5em;
 	margin: 0 auto;
+	margin-top: 5em;
 	padding-bottom: 5em;
 	width: 40%;
 }
@@ -91,8 +91,8 @@ form {
 	font-size: 1em;
 	margin: 0;
 	outline: none;
-	padding-left: 0.75em;
 	padding: 0.5em;
+	padding-left: 0.75em;
 	-webkit-transition: all 0.1s ease-in-out;
 	transition: all 0.1s ease-in-out;
 	width: 100%;
