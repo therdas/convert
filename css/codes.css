@@ -4,8 +4,8 @@ button {
 }
 
 button:hover, button:active {
-	border-color: #03A9F4;
 	background-color: #03A9F4;
+	border-color: #03A9F4;
 }
 
 .container > input:focus, .container > input:hover, .container > select:hover , .container > div:hover {

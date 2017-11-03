@@ -1,22 +1,23 @@
 body {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 	font-family: 'Roboto Mono', monospace;
-	width: 40%;
-	margin: 0 auto;
-	box-sizing: border-box;
 	margin-top: 5em;
+	margin: 0 auto;
 	padding-bottom: 5em;
+	width: 40%;
 }
 
 a {
-	text-decoration: none;
 	color: rgba(0,0,0,0.8);
+	text-decoration: none;
 }
 
 h1 {
-	text-align: center;
-	width: 100%;
 	font-weight: 400;
 	margin-bottom: 2em;
+	text-align: center;
+	width: 100%;
 } 
 
 nav {
@@ -24,12 +25,14 @@ nav {
 }
 
 nav > a {
-	box-sizing: border-box;
+	border-radius: 3px;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 	display: block;
 	line-height: 1.5em;
 	margin-top: 0.5em;
 	padding: 5px;
-	border-radius: 3px;
+	-webkit-transition: all 0.1s ease-in-out;
 	transition: all 0.1s ease-in-out;
 }
 
@@ -38,8 +41,8 @@ nav > a:hover {
 }
 
 nav > a > span:first-child {
-	font-weight: 700;
 	font-size: 1em;
+	font-weight: 700;
 }
 
 nav > a > span:first-child:after{
@@ -73,24 +76,26 @@ form {
 
 .container {
 	display: block;
-	width: 100%;
 	height: auto;
 	margin: 0.5em 0;
+	width: 100%;
 }
 
 .container > input, .container > div {
-	display: block;
-	margin: 0;
-	padding: 0.5em;
-	padding-left: 0.75em;
-	font-size: 1em;
-	font-family: 'Roboto Mono', monospace;
-	border: none;
 	border-bottom: 2px solid rgba(0,0,0,0.2);
-	box-sizing: border-box;
+	border: none;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	display: block;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 1em;
+	margin: 0;
 	outline: none;
-	width: 100%;
+	padding-left: 0.75em;
+	padding: 0.5em;
+	-webkit-transition: all 0.1s ease-in-out;
 	transition: all 0.1s ease-in-out;
+	width: 100%;
 }
 
 .container > input:focus, .container > input:hover, .container > select:hover , .container > div:hover {
@@ -98,47 +103,54 @@ form {
 }
 
 .container > span {
-	width: 100%;
+  	-webkit-box-sizing: border-box;
+  	        box-sizing: border-box;
   	display: block;
-  	margin-top: 1em;
-  	margin-bottom: -3px;
-  	text-align: left;
-  	font-weight: 700;
   	font-size: 0.9em;
-  	text-transform: uppercase;
-  	box-sizing: border-box;
-  	padding-left: 0.8em;
+  	font-weight: 700;
+  	margin-bottom: -3px;
+  	margin-top: 1em;
   	opacity: 0.9;
+  	padding-left: 0.8em;
+  	text-align: left;
+  	text-transform: uppercase;
+  	width: 100%;
 }
 
 .container > select {
-	display: block;
-	margin: 0;
-	padding: 0.5em;
-	font-size: 1em;
-	font-family: 'Roboto Mono', monospace;
-	border: none;
+	background-color: white;
 	border-bottom: 2px solid rgba(0,0,0,0.2);
-	box-sizing: border-box;
+	border: none;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	display: block;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 1em;
+	margin: 0;
 	outline: none;
-	width: 100%;
+	padding: 0.5em;
+	-webkit-transition: all 0.1s ease-in-out;
 	transition: all 0.1s ease-in-out;
+	width: 100%;
 }
 
 .error {
-	width: 100%;
-	margin: 0.7em;
-	box-sizing: border-box;
-	display: block;
-	transition: all 0.2s ease-in-out;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 	color: #B71C1C;
+	display: block;
+	margin: 0.7em;
+	-webkit-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+	width: 100%;
 }
 
 button {
 	background-color: white;
 	border-radius: 3px;
 	border: 2px solid;
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 	display: block;
 	font-family: 'Roboto Mono', monospace;
 	font-size: 1em;
@@ -148,8 +160,9 @@ button {
 	outline: none;
 	padding: 0;
 	text-transform: uppercase;
-	width: 40%;
+	-webkit-transition: all 0.1s ease-in-out;
 	transition: all 0.1s ease-in-out;
+	width: 40%;
 }
 
 button:hover, button:active {
@@ -158,21 +171,23 @@ button:hover, button:active {
 }
 
 #attribute {
-	transform: rotate(270deg);
+	font-weight: 600;
+	left: -130px;
+	opacity: 0.2;
 	position: absolute;
 	top: 200px;
-	left: -130px;
-	font-weight: 600;
-	opacity: 0.2;
+	-webkit-transform: rotate(270deg);
+	        transform: rotate(270deg);
 }
 
 #mobile-attr {
-	padding: 5px;
-	margin-top: 2em;
-	font-weight: 600;
-	opacity: 0.2;
-	text-align: center;
 	display: none;
+	font-weight: 600;
+	margin-top: 2em;
+	opacity: 0.2;
+	padding: 5px;
+	text-align: center;
+	-webkit-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
 }
 
