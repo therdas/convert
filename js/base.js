@@ -173,7 +173,7 @@ function convertInt (num, base) {
 
 function convertFrac (frac, base) {
 	var converted = "", index = 0;
-	while(frac!=0 && index < 200) {
+	while(frac!=0 && index < 20) {
 		converted = converted + parseNumber(Math.floor(frac*base));
 		frac = (frac * base) % 1;
 		++index;
